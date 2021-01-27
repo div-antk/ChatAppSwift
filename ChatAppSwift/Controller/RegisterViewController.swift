@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -16,10 +18,31 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let checkModel = CheckPermission()
+        checkModel.showCheckPermission()
+        
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func regitster(_ sender: Any) {
+    
+        // email、passwordが空ではないことを確認
+        
+        // 登録
+        
+        // email、profileImageの値
+        
+    }
+    
+    // プロフィール画像をタップしたとき
+    @IBAction func tapImageView(_ sender: Any) {
+        
+        // カメラ、アルバムから
+        
+        // アラートを出す
+    }
+    
     /*
     // MARK: - Navigation
 
