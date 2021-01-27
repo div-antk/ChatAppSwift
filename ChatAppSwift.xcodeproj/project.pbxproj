@@ -15,6 +15,8 @@
 		3B0C814E25C17CF200D3426E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0C814D25C17CF200D3426E /* Assets.xcassets */; };
 		3B0C815125C17CF200D3426E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0C814F25C17CF200D3426E /* LaunchScreen.storyboard */; };
 		3B2597B025C188290048CB20 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B2597AF25C188290048CB20 /* GoogleService-Info-2.plist */; };
+		3B2597BB25C18A900048CB20 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2597BA25C18A900048CB20 /* RegisterViewController.swift */; };
+		3B2597BE25C18AC10048CB20 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2597BD25C18AC10048CB20 /* CheckPermission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		3B0C815025C17CF200D3426E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B0C815225C17CF200D3426E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B2597AF25C188290048CB20 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		3B2597BA25C18A900048CB20 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3B2597BD25C18AC10048CB20 /* CheckPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
 		80B38C088200E2211F102CCA /* Pods_ChatAppSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99431B7BAE9AA6ABD25D7211 /* Pods-ChatAppSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppSwift.release.xcconfig"; path = "Target Support Files/Pods-ChatAppSwift/Pods-ChatAppSwift.release.xcconfig"; sourceTree = "<group>"; };
 		A7766153D2710F699DE4B24D /* Pods-ChatAppSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppSwift.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppSwift/Pods-ChatAppSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,7 +71,8 @@
 			children = (
 				3B0C814425C17CEF00D3426E /* AppDelegate.swift */,
 				3B0C814625C17CEF00D3426E /* SceneDelegate.swift */,
-				3B0C814825C17CEF00D3426E /* ViewController.swift */,
+				3B2597B425C18A2B0048CB20 /* Model */,
+				3B2597B225C18A1A0048CB20 /* Controller */,
 				3B0C814A25C17CEF00D3426E /* Main.storyboard */,
 				3B0C814D25C17CF200D3426E /* Assets.xcassets */,
 				3B0C814F25C17CF200D3426E /* LaunchScreen.storyboard */,
@@ -75,6 +80,23 @@
 				3B2597AF25C188290048CB20 /* GoogleService-Info-2.plist */,
 			);
 			path = ChatAppSwift;
+			sourceTree = "<group>";
+		};
+		3B2597B225C18A1A0048CB20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B0C814825C17CEF00D3426E /* ViewController.swift */,
+				3B2597BA25C18A900048CB20 /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B2597B425C18A2B0048CB20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B2597BD25C18AC10048CB20 /* CheckPermission.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7BE0D4B5D51DFA12DB754E5E /* Pods */ = {
@@ -209,9 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2597BE25C18AC10048CB20 /* CheckPermission.swift in Sources */,
 				3B0C814925C17CEF00D3426E /* ViewController.swift in Sources */,
 				3B0C814525C17CEF00D3426E /* AppDelegate.swift in Sources */,
 				3B0C814725C17CEF00D3426E /* SceneDelegate.swift in Sources */,
+				3B2597BB25C18A900048CB20 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

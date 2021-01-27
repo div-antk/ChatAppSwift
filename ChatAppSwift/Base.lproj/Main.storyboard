@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="1439.1304347826087" y="98.4375"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="5kp-6j-fDb">
             <objects>
-                <viewController id="BtQ-5z-veb" sceneMemberID="viewController">
+                <viewController id="BtQ-5z-veb" customClass="RegisterViewController" customModule="ChatAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KrG-1w-92V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,32 +64,40 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0cL-0r-3a6">
-                                <rect key="frame" x="87" y="119" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-dZ-6FN">
-                                <rect key="frame" x="87" y="402" width="240" height="34"/>
+                                <rect key="frame" x="87" y="479.5" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Keo-8v-kTV">
-                                <rect key="frame" x="87" y="468" width="240" height="34"/>
+                                <rect key="frame" x="87" y="544.5" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0cL-0r-3a6">
+                                <rect key="frame" x="87" y="168.5" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fUV-09-nyY" appends="YES" id="U2h-xP-3Zh"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="etf-Wr-TTR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="lLL-qo-PLQ"/>
                     <connections>
+                        <outlet property="emailTextField" destination="dNb-dZ-6FN" id="36Z-Ti-PVf"/>
+                        <outlet property="passwordTextField" destination="Keo-8v-kTV" id="UoQ-uL-sAm"/>
+                        <outlet property="profileImageView" destination="0cL-0r-3a6" id="DRS-q5-jLg"/>
                         <segue destination="bDz-Fk-8wn" kind="show" id="aNP-Sg-XyP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIk-nB-rEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fUV-09-nyY"/>
             </objects>
             <point key="canvasLocation" x="2350.7246376811595" y="97.767857142857139"/>
         </scene>
