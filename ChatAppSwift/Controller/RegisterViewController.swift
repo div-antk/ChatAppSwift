@@ -15,6 +15,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    var sendToDBModel = SendToDBModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,21 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func regitster(_ sender: Any) {
         
         // email、passwordが空ではないことを確認
+        if emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image {
+            
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!)
+            { (result, error) in
+                
+                if error != nil {
+                    print(error.debugDescription)
+                    return
+                }
+                
+                let data = image.jpegData(compressionQuality: 1.0)
+                
+                self.sendToDBModel.sendProfileImageData(data: data!)
+            }
+        }
         
         // 登録
         

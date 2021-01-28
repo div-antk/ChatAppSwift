@@ -9,7 +9,7 @@ import Foundation
 import FirebaseStorage
 
 // 画像データをストレージに飛ばす
-class sendToDBModel {
+class SendToDBModel {
     init() {
         <#statements#>
     }
@@ -26,7 +26,7 @@ class sendToDBModel {
             .child("\(UUID().uuidString +  String(Date().timeIntervalSince1970)).jpg")
         
         // データを置く
-        imageRef.putData(Data(profileImage!), metadata: nil) { (metaData, error) in
+        imageRef.putData(profileImage!, metadata: nil) { (metaData, error) in
             
             if error != nil {
                 print(error.debugDescription)
@@ -40,7 +40,7 @@ class sendToDBModel {
                     print(error.debugDescription)
                     return
                 }
-                // ユーザーのプロフィール画像
+                // userImageのURLを保存
                 UserDefaults.standard.setValue(url?.absoluteString, forKey: "userImage")
             }
         }
