@@ -8,8 +8,17 @@
 import Foundation
 import FirebaseStorage
 
+protocol SendProfileOKDelegate {
+    
+    func sendProfileOKDelegate(url:String)
+}
+
 // 画像データをストレージに飛ばす
 class SendToDBModel {
+    
+    // インスタンスとして持つ
+    var sendProfileOKDelegate:SendProfileOKDelegate?
+    
     init() {
         <#statements#>
     }
@@ -42,6 +51,7 @@ class SendToDBModel {
                 }
                 // userImageのURLを保存
                 UserDefaults.standard.setValue(url?.absoluteString, forKey: "userImage")
+                self.sendProfileOKDelegate?.sendProfileOKDelegate(url: url!.absoluteString)
             }
         }
     }

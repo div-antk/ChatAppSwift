@@ -9,19 +9,22 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SendProfileOKDelegate {
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     
     var sendToDBModel = SendToDBModel()
+    var urlString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let checkModel = CheckPermission()
         checkModel.showCheckPermission()
+        sendToDBModel.sendProfileOKDelegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -50,6 +53,16 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         
         // email、profileImageの値
         
+    }
+    
+    func sendProfileOKDelegate(url: String) {
+        
+        urlString = url
+
+        if urlString.isEmpty != true {
+            
+            self.performSegue(withIdentifier: "chat", sender: nil)
+        }
     }
     
     // プロフィール画像をタップしたとき
