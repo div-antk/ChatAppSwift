@@ -21,7 +21,28 @@ class sendToDBModel {
         // データを圧縮
         let profileImage = image?.jpegData(compressionQuality: 0.1)
         
-        // ディレクトリの作成
+        // パスを作成する（ディレクトリ/ファイル名）
         let imageRef = Storage.storage().reference().child("profileImage")
+            .child("\(UUID().uuidString +  String(Date().timeIntervalSince1970)).jpg")
+        
+        // データを置く
+        imageRef.putData(Data(profileImage!), metadata: nil) { (metaData, error) in
+            
+            if error != nil {
+                print(error.debugDescription)
+                return
+            }
+            
+            // 画像が保存されたURLを引数に取る
+            imageRef.downloadURL { (url, error) in
+                
+                if error != nil {
+                    print(error.debugDescription)
+                    return
+                }
+                // ユーザーのプロフィール画像
+                UserDefaults.standard.setValue(url?.absoluteString, forKey: "userImage")
+            }
+        }
     }
 }
