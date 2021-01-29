@@ -96,7 +96,7 @@
                         <outlet property="emailTextField" destination="dNb-dZ-6FN" id="36Z-Ti-PVf"/>
                         <outlet property="passwordTextField" destination="Keo-8v-kTV" id="UoQ-uL-sAm"/>
                         <outlet property="profileImageView" destination="0cL-0r-3a6" id="DRS-q5-jLg"/>
-                        <segue destination="bDz-Fk-8wn" kind="show" id="aNP-Sg-XyP"/>
+                        <segue destination="bDz-Fk-8wn" kind="show" identifier="chat" id="aNP-Sg-XyP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIk-nB-rEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -232,10 +232,10 @@
             </objects>
             <point key="canvasLocation" x="4031.884057971015" y="-243.08035714285714"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="yCb-r9-dQ7">
             <objects>
-                <tabBarController id="bDz-Fk-8wn" sceneMemberID="viewController">
+                <tabBarController id="bDz-Fk-8wn" customClass="TabBarViewController" customModule="ChatAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Due-rA-6iH"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rSP-kC-pPb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

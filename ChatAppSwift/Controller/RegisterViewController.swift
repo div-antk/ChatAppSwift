@@ -35,6 +35,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         // email、passwordが空ではないことを確認
         if emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image {
             
+            // ユーザを作成
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!)
             { (result, error) in
                 
