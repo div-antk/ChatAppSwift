@@ -49,7 +49,30 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     // 送信
     @IBAction func send(_ sender: Any) {
     
-    
+        if let messageBody = messageTextField.text, let sender = Auth.auth().currentUser?.email {
+            
+            db.collection(roomName).addDocument(data: [
+                "sender":sender,
+                "body":messageBody,
+                "imageString":imageString,
+                "date":Date().timeIntervalSince1970
+            ]) { (error) in
+                
+                if error != nil {
+                    print(error.debugDescription)
+                    return
+                }
+                
+                // 非同期処理
+                DispatchQueue.main.async {
+                    // フィールドを空にする
+                    self.messageTextField.text = ""
+                    // キーボードを閉じる
+                    self.messageTextField.resignFirstResponder()
+                }
+                
+            }
+        }
     }
     
     /*
