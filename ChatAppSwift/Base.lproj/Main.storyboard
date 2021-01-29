@@ -191,7 +191,7 @@
         <!--Item 1-->
         <scene sceneID="TLf-4Q-x9n">
             <objects>
-                <viewController id="U0V-UK-ExZ" sceneMemberID="viewController">
+                <viewController id="U0V-UK-ExZ" customClass="ChatViewController" customModule="ChatAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LOk-oV-2Pz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,10 +227,14 @@
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="VBZ-cQ-efn"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="rmj-io-Vof" id="h4W-Lo-0Pr"/>
+                        <outlet property="tableView" destination="SJN-ow-3RY" id="eET-t8-HLC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzR-9w-sV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4031.884057971015" y="-243.08035714285714"/>
+            <point key="canvasLocation" x="4032" y="-220"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="yCb-r9-dQ7">
