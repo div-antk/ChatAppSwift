@@ -19,6 +19,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var roomName = String()
     var imageString = String()
     
+    var messages:[Message] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +38,38 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         // タイトルバーにルーム名を表示
         self.navigationItem.title = roomName
+    }
+    
+    // メッセージを取得
+    func loadMessages(roomName:String) {
+        
+        db.collection(roomName).order(by: "date").addSnapshotListener { (snapShot, error) in
+            
+            self.messages = []
+            
+            if error != nil {
+                print(error.debugDescription)
+                return
+            }
+            
+            if let snapShotDoc = snapShot?.documents {
+                
+                for doc in snapShotDoc {
+                    
+                    let data = doc.data()
+                    if let sender = data["sender"] as? String,
+                       let body = data["body"] as? String,
+                       let imageString = data["imageString"] as? String
+                    {
+                        // 構造体
+                        let newMessage = Message(sender: sender, body: body, imageString: imageString)
+                        
+                        self.messages.append(newMessage)
+                    }
+                }
+            }
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
