@@ -16,10 +16,26 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     let db = Firestore.firestore()
     
+    var roomName = String()
+    var imageString = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
+        if UserDefaults.standard.object(forKey: "userImage") != nil {
+            
+            imageString = UserDefaults.standard.object(forKey: "userImage") as! String
+        }
+        
+        if roomName == "" {
+            
+            roomName = "All"
+        }
+        // タイトルバーにルーム名を表示
+        self.navigationItem.title = roomName
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,6 +46,12 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         <#code#>
     }
 
+    // 送信
+    @IBAction func send(_ sender: Any) {
+    
+    
+    }
+    
     /*
     // MARK: - Navigation
 
