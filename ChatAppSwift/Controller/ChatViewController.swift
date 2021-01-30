@@ -64,6 +64,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         // 構造体
                         let newMessage = Message(sender: sender, body: body, imageString: imageString)
                         
+                        // 構造体がこの中に入る
                         self.messages.append(newMessage)
                     }
                 }
@@ -103,6 +104,15 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     self.messageTextField.text = ""
                     // キーボードを閉じる
                     self.messageTextField.resignFirstResponder()
+                    
+                    DispatchQueue.main.async {
+                        // tableViewにmessageを表示
+                        self.tableView.reloadData()
+                        
+                        let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                        // 送信後に最新のmessageまで移動
+                        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                    }
                 }
                 
             }
