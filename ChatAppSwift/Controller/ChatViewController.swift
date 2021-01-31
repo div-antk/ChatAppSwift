@@ -27,6 +27,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
 
+        tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        
         if UserDefaults.standard.object(forKey: "userImage") != nil {
             
             imageString = UserDefaults.standard.object(forKey: "userImage") as! String
@@ -38,6 +41,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         // タイトルバーにルーム名を表示
         self.navigationItem.title = roomName
+        
+        loadMessages(roomName: roomName)
     }
     
     // メッセージを取得
@@ -79,9 +84,50 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return messages.count
     }
     
+    // セクションの数
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return 1
+        // MessageCellのプロパティにアクセスできるようにする
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MessageCell
+        
+        let message = messages[indexPath.row]
+        
+        cell.label.text = message.body
+        
+        // カスタムセルのプロフィール画像を表示する位置
+        if message.sender == Auth.auth().currentUser?.email {
+            
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            
+            // 画像呼び出し元
+            cell.rightImageView.sd_setImage(with: URL(string: imageString), completed: nil)
+            cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
+            
+            // 背景色
+            cell.backView.backgroundColor = .systemTeal
+            cell.label.textColor = .white
+        
+        } else {
+        
+            // elseの場合は基本的に全部逆
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            
+            // 画像呼び出し元
+            cell.leftImageView.sd_setImage(with: URL(string: imageString), completed: nil)
+            cell.rightImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
+            
+            // 背景色
+            cell.backView.backgroundColor = .systemOrange
+            cell.label.textColor = .white
+        }
+        
+        return cell
     }
     
     

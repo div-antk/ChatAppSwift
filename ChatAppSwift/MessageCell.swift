@@ -18,6 +18,7 @@ class MessageCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        // 角を丸くする
         leftImageView.layer.cornerRadius = 25.0
         rightImageView.layer.cornerRadius = 25.0
         backView.layer.cornerRadius = 10
