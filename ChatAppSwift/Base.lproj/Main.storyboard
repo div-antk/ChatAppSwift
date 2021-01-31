@@ -111,7 +111,7 @@
         <!--Item 2-->
         <scene sceneID="act-eU-r8D">
             <objects>
-                <viewController id="FbK-4H-XHN" sceneMemberID="viewController">
+                <viewController id="FbK-4H-XHN" customClass="RoomViewController" customModule="ChatAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GyK-OH-EiW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +137,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="m3K-C3-EUG"/>
                     <connections>
+                        <outlet property="tableView" destination="Bbs-e7-HTI" id="EYT-ZL-CmL"/>
                         <segue destination="87P-Vj-6rX" kind="show" id="M4a-dG-cMV"/>
                     </connections>
                 </viewController>

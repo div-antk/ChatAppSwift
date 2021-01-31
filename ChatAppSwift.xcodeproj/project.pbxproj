@@ -17,6 +17,7 @@
 		3B1DA03E25C42574007839BE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1DA03D25C42574007839BE /* Message.swift */; };
 		3B1DA04225C5714C007839BE /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1DA04025C5714C007839BE /* MessageCell.swift */; };
 		3B1DA04325C5714C007839BE /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1DA04125C5714C007839BE /* MessageCell.xib */; };
+		3B1DA04625C6DED5007839BE /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1DA04525C6DED5007839BE /* RoomViewController.swift */; };
 		3B2597B025C188290048CB20 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B2597AF25C188290048CB20 /* GoogleService-Info-2.plist */; };
 		3B2597BB25C18A900048CB20 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2597BA25C18A900048CB20 /* RegisterViewController.swift */; };
 		3B2597BE25C18AC10048CB20 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2597BD25C18AC10048CB20 /* CheckPermission.swift */; };
@@ -37,6 +38,7 @@
 		3B1DA03D25C42574007839BE /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3B1DA04025C5714C007839BE /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		3B1DA04125C5714C007839BE /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		3B1DA04525C6DED5007839BE /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		3B2597AF25C188290048CB20 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
 		3B2597BA25C18A900048CB20 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3B2597BD25C18AC10048CB20 /* CheckPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				3B2597BA25C18A900048CB20 /* RegisterViewController.swift */,
 				3BEC580525C41D5B00653411 /* TabBarViewController.swift */,
 				3BEC580825C41DE600653411 /* ChatViewController.swift */,
+				3B1DA04525C6DED5007839BE /* RoomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				3BEC580925C41DE600653411 /* ChatViewController.swift in Sources */,
 				3B1DA03E25C42574007839BE /* Message.swift in Sources */,
 				3B0C814525C17CEF00D3426E /* AppDelegate.swift in Sources */,
+				3B1DA04625C6DED5007839BE /* RoomViewController.swift in Sources */,
 				3B0C814725C17CEF00D3426E /* SceneDelegate.swift in Sources */,
 				3BEC580625C41D5B00653411 /* TabBarViewController.swift in Sources */,
 				3B2597C525C2C46A0048CB20 /* SendToDBModel.swift in Sources */,
