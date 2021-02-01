@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="4031.884057971015" y="482.8125"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="tcz-rO-TxJ">
             <objects>
-                <viewController id="87P-Vj-6rX" sceneMemberID="viewController">
+                <viewController id="87P-Vj-6rX" customClass="ChatViewController" customModule="ChatAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5hg-NP-kNw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -61,6 +61,17 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 118
     }
     
+    // セルがタップされたとき
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "roomChat", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let roomChatVC = segue.destination as! ChatViewController
+        roomChatVC.roomName = roomNameArray[sender as! Int]
+    }
     /*
      // MARK: - Navigation
      
