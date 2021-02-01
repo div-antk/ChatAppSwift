@@ -138,7 +138,7 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="m3K-C3-EUG"/>
                     <connections>
                         <outlet property="tableView" destination="Bbs-e7-HTI" id="EYT-ZL-CmL"/>
-                        <segue destination="87P-Vj-6rX" kind="show" id="M4a-dG-cMV"/>
+                        <segue destination="87P-Vj-6rX" kind="show" identifier="roomChat" id="M4a-dG-cMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewU-uV-JkU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
