@@ -10,7 +10,7 @@ import ViewAnimator
 
 
 class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var roomNameArray = ["誰でも話そうよ！","20代たまり場！","1人ぼっち集合","地球住み集合！！","好きなYoutuberを語ろう","大学生集合！！","高校生集合！！","中学生集合！！","暇なひと集合！","A型の人！！"]
     var roomImageStringArray = ["0","1","2","3","4","5","6","7","8","9"]
     
@@ -27,12 +27,27 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
     
+    // ViewAnimator
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.isHidden = false
+        
+        let animation = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
+        UIView.animate(views: tableView.visibleCells, animations: animation, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        return roomNameArray.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        
     }
     
     /*
