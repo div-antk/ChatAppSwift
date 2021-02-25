@@ -28,14 +28,14 @@ class SendToDBModel {
         let image = UIImage(data: data)
         
         // データを圧縮
-        let profileImage = image?.jpegData(compressionQuality: 0.1)
+        let profileImageData = image?.jpegData(compressionQuality: 0.1)
         
         // パスを作成する（ディレクトリ/ファイル名）
         let imageRef = Storage.storage().reference().child("profileImage")
             .child("\(UUID().uuidString +  String(Date().timeIntervalSince1970)).jpg")
         
         // データを置く
-        imageRef.putData(profileImage!, metadata: nil) { (metaData, error) in
+        imageRef.putData(profileImageData!, metadata: nil) { (metaData, error) in
             
             if error != nil {
                 print(error.debugDescription)

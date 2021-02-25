@@ -22,14 +22,17 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 許可画面
         let checkModel = CheckPermission()
         checkModel.showCheckPermission()
+        
         sendToDBModel.sendProfileOKDelegate = self
         
         // Do any additional setup after loading the view.
     }
     
     
+    // 新規登録画面
     @IBAction func regitster(_ sender: Any) {
         
         // email、passwordが空ではないことを確認
@@ -72,7 +75,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         // カメラ、アルバムから
         
         
-        // アラートを出す
+        // カメラとアルバムのどちらを使うのかのアラート
         showAlert()
     }
     
@@ -109,6 +112,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
+    // アルバムが選択されたら呼ばれる
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
@@ -129,7 +133,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     
-    //アラート
+    // カメラとアルバムのどちらを使うのか
     func showAlert(){
         
         let alertController = UIAlertController(title: "選択", message: "どちらを使用しますか?", preferredStyle: .actionSheet)
