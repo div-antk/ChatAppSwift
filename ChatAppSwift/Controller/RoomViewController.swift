@@ -24,7 +24,6 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // ViewAnimatorがかかる場合、テーブルが表示されると挙動がおかしくなるので
         tableView.isHidden = true
-        // Do any additional setup after loading the view.
     }
     
     // ViewAnimator
@@ -36,15 +35,18 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         UIView.animate(views: tableView.visibleCells, animations: animation, completion: nil)
     }
     
+    // セルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return roomNameArray.count
     }
     
+    // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
@@ -67,6 +69,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "roomChat", sender: indexPath.row)
     }
     
+    // 上でタップされたものを受け取る
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let roomChatVC = segue.destination as! ChatViewController

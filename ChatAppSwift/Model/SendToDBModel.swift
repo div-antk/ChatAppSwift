@@ -19,10 +19,6 @@ class SendToDBModel {
     // インスタンスとして持つ
     var sendProfileOKDelegate:SendProfileOKDelegate?
     
-    init() {
-        <#statements#>
-    }
-
     func sendProfileImageData(data:Data) {
         
         let image = UIImage(data: data)
