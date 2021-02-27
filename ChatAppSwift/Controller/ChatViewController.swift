@@ -119,8 +119,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.rightImageView.isHidden = true
             
             // 画像呼び出し元
-            cell.leftImageView.sd_setImage(with: URL(string: imageString), completed: nil)
-            cell.rightImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
+            cell.rightImageView.sd_setImage(with: URL(string: imageString), completed: nil)
+            cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
             
             // 背景色
             cell.backView.backgroundColor = .systemOrange
